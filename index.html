@@ -6,13 +6,28 @@
     <title>Webperformance Optimisation</title>
 </head>
 <body>
+    <script>
+        function fetchData() {
+            fetch('https://catfact.ninja/fact')
+                .then(response => response.json())
+                .then(data => {
+                    const catFact = data.fact;
+                    console.log(catFact);
+                    const factParagraph = document.createElement('p');
+                    factParagraph.textContent = catFact;
+                    document.body.appendChild(factParagraph);
+                })
+                .catch(error => console.error(error));
+
+        }
+    </script>
     <nav>
         <ul>
             <li><a href="javascriptAsync.html">JavaScript Async</a></li>
             <li><a href="javascriptDefer.html">JavaScript Defer</a></li>
         </ul>
     </nav>
-    <h1>Welcome to my website!</h1>
-    <p>Thanks for visiting. Please use the navigation above to explore the site.</p>
+    <h1>Hello this is a place to learn about Catfacts!</h1>
+    <p>This page has it's script tag in the beginning of the body. It fetches data from an API and reders a p tag with the fetched data.</p>
 </body>
 </html>
