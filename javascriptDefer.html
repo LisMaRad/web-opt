@@ -4,31 +4,19 @@
         <title>My Page</title>
     </head>
     <body>
-        <script defer>
+        <script defer src="fetchCat.js">
             // JavaScript code goes here
-            function fetchData() {
-                fetch('https://catfact.ninja/fact')
-                    .then(response => response.json())
-                    .then(data => {
-                        const catFact = data.fact;
-                        console.log(catFact);
-                        const factParagraph = document.createElement('p');
-                        factParagraph.textContent = catFact;
-                        document.body.appendChild(factParagraph);
-                    })
-                    .catch(error => console.error(error));
-            }
-            window.addEventListener('load', fetchData);
             
         </script>
         <nav>
             <ul>
                 <li><a href="index.html">JavaScript am Anfang</a></li>
+                <li><a href="jsEnde.html">JavaScript am Ende</a></li>
                 <li><a href="javascriptAsync.html">JavaScript Async</a></li>
             </ul>
         </nav>
-        <h1>Hello, world!</h1>
-        <p>This is my page.</p>
+        <h1>Hello this is a place to learn about Catfacts!</h1>
+        <p>This page has its script tag in the beginning of the body and it is <b>DEFER</b>. It fetches data from an API and renders a p tag with the fetched data.</p>
         
     </body>
 </html>
